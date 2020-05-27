@@ -11,6 +11,7 @@ class _IdentifierState extends State<Identifier> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey[900],
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
         onPressed: (){
@@ -18,7 +19,6 @@ class _IdentifierState extends State<Identifier> {
         }
         ),
         title: Text('Point your camera to an object'),
-        backgroundColor: Colors.grey[900],
       ),
       backgroundColor: Colors.grey[900],
       body: Hero(
@@ -35,6 +35,9 @@ class _IdentifierState extends State<Identifier> {
             Flexible(
               flex: 1,
               child: ListTile(
+                onTap: (){
+                  Navigator.pushNamed(context, '/labeler');
+                },
                   contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                   leading: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
